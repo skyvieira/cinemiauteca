@@ -67,14 +67,20 @@ export const Poster = styled.section`
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
+        border-radius: 1.25rem;
+        filter: drop-shadow(0 0 0.5rem #000);
     }
 
     img {
         width: 20rem;
         height: 30rem;
         object-fit: cover;
-        border-radius: 1.25rem;
-        filter: drop-shadow(0 0 0.5rem #000);
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 `;
 
