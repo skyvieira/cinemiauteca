@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+
 import Carousel from "../Carousel";
 
-import "./styles.scss";
+import { Link } from "react-router-dom";
 
 export default function Movies() {
     const [movies, setMovies] = useState([]);
@@ -24,14 +25,16 @@ export default function Movies() {
             <h2>Movies</h2>
             <Carousel>
                 {movies.map((movie, i) => (
-                    <div key={i}>
-                        <p>{movie.title}</p>
-                        <img
-                            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-                            alt=""
-                            width="200"
-                        />
-                    </div>
+                    <figure key={i}>
+                        <Link to={`/movies/detailsMovie/${movie.id}`}>
+                            <img
+                                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                                alt=""
+                                width="200"
+                            />
+                        </Link>
+                        <figcaption>{movie.title}</figcaption>
+                    </figure>
                 ))}
             </Carousel>
         </section>
