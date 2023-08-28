@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "../Carousel";
 
-import "./styles.scss";
+import { Link } from "react-router-dom";
 
 export default function Shows() {
     const [shows, setShows] = useState([]);
@@ -23,12 +23,14 @@ export default function Shows() {
             <Carousel>
                 {shows.map((show, i) => (
                     <figure key={i}>
-                        <img
-                            src={`https://image.tmdb.org/t/p/original${show.poster_path}`}
-                            alt=""
-                            width="200"
-                        />
-                        <figcaption>{show.title}</figcaption>
+                        <Link to={`/shows/detailsShow/${show.id}`}>
+                            <img
+                                src={`https://image.tmdb.org/t/p/original${show.poster_path}`}
+                                alt=""
+                                width="200"
+                            />
+                        </Link>
+                        <figcaption>{show.name}</figcaption>
                     </figure>
                 ))}
             </Carousel>

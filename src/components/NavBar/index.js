@@ -1,11 +1,24 @@
 import React from "react";
 
-import "./styles.scss";
+import { Link } from "react-router-dom";
 
-export default function NavBar() {
+export default function index() {
     return (
         <nav>
-            <a href="">nav</a>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/movies">Movies</Link>
+                </li>
+                <li>
+                    <Link to="/shows">Shows</Link>
+                </li>
+                <li>
+                    <Link to="/quiz">Quiz</Link>
+                </li>
+            </ul>
         </nav>
     );
 }
