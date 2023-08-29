@@ -6,7 +6,7 @@ import Commets from '../../Comments';
 
 import styled from 'styled-components';
 
-export const Container = styled.section`
+const Container = styled.section`
     width: 100%;
     height: 100vh;
     background: url(${props => props.background}) no-repeat center/cover;
@@ -26,7 +26,7 @@ export const Container = styled.section`
     }
 `;
 
-export const Content = styled.section`
+const Content = styled.section`
     width: 100%;
     height: 100%;
     display: flex;
@@ -35,7 +35,7 @@ export const Content = styled.section`
     z-index: 1;
 `;
 
-export const TitleBox = styled.section`
+const TitleBox = styled.section`
     width: 100%;
     height: 30%;
     display: flex;
@@ -46,7 +46,7 @@ export const TitleBox = styled.section`
     padding: 1rem 0;
 `;
 
-export const Info = styled.section`
+const Info = styled.section`
     width: 100%;
     height: 60%;
     display: flex;
@@ -54,7 +54,7 @@ export const Info = styled.section`
     justify-content: space-around;
 `;
 
-export const Poster = styled.section`
+const Poster = styled.section`
     width: 20%;
     height: 100%;
     display: flex;
@@ -84,8 +84,8 @@ export const Poster = styled.section`
     }
 `;
 
-export const Details = styled.section`
-    width: 60%;
+const Details = styled.section`
+    width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -94,7 +94,7 @@ export const Details = styled.section`
     gap: 2rem;
 `;
 
-export const Sinopse = styled.section`
+const Sinopse = styled.section`
     width: 100%;
     height: 30%;
     display: flex;
@@ -105,7 +105,7 @@ export const Sinopse = styled.section`
     text-align: justify;
 `;
 
-export const ReleaseDate = styled.section`
+const ReleaseDate = styled.section`
     width: 100%;
     height: 10%;
     display: flex;
@@ -129,7 +129,7 @@ export const ReleaseDate = styled.section`
     }
 `;
 
-export const GoBack = styled.section`
+const GoBack = styled.section`
     width: 100%;
     height: 10%;
     display: flex;
