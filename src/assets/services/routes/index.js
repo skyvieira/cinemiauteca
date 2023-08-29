@@ -2,13 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Routes
-import Home from '../../pages/Home';
+import Home from '../../pages/home';
 import Error from './error';
 import Movies from '../../pages/movies';
 import Shows from '../../pages/shows';
 import DetailsMovie from '../../pages/movies/detailsMovie';
 import DetailsShow from '../../pages/shows/detailsShow';
 import Quiz from '../../pages/quiz';
+import Search from '../../pages/search';
 
 export default function index() {
     return (
@@ -22,6 +23,7 @@ export default function index() {
                     <Route path="/movies/detailsMovie/:id" element={<DetailsMovie />} />
                     <Route path="/shows/detailsShow/:id" element={<DetailsShow />} />
                     <Route path="/quiz" element={<Quiz />} />
+                    <Route path="/search" element={<Search />} />
                 </Routes>
             </Router>
         </>
