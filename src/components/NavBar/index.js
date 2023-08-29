@@ -18,6 +18,9 @@ export default function index() {
                 <li>
                     <Link to="/quiz">Quiz</Link>
                 </li>
+                <li>
+                    <Link to="/search">Search</Link>
+                </li>
             </ul>
         </nav>
     );
