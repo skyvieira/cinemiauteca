@@ -1,20 +1,38 @@
-import React, { lazy, Suspense } from "react";
+import React, { useState, useEffect } from "react";
+import Carousel from "../Carousel";
+import { Link, useParams } from "react-router-dom";
 
-//Components
-const Layout = lazy(() => import("../../components/Layout"));
-const Movies = lazy(() => import("../../components/Movies"));
-const Shows = lazy(() => import("../../components/Shows"));
+export default function Index({ typeOfComponent, apiType }) {
+    const { id } = useParams();
+    const [items, setItems] = useState([]);
 
-export default function index({ typeOfComponent }) {
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/${apiType}?api_key=c6b4b6bad364be3d0debd4a472f74bc4&language=pt-br`)
+            .then((response) => response.json())
+            .then((data) => {
+                const filteredItems = data.results.filter((item) => item.id !== parseInt(id));
+                setItems(filteredItems);
+            })
+            .catch((err) => console.log(err.message));
+    }, [id, apiType]);
+
     return (
-        <>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Layout>
-                    {
-                        typeOfComponent === "movie" ? <Movies /> : <Shows />
-                    }
-                </Layout>
-            </Suspense>
-        </>
-    )
+        <section>
+            <Carousel>
+                {items.map((item, i) => (
+                    <figure key={i}>
+                        <Link to={`/${typeOfComponent}/details${typeOfComponent}/${item.id}`}>
+                            <img
+                                src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
+                                alt={item.title || item.name}
+                                className="carousel_image"
+                                width="800px"
+                            />
+                            <figcaption>{item.title || item.name}</figcaption>
+                        </Link>
+                    </figure>
+                ))}
+            </Carousel>
+        </section>
+    );
 }
