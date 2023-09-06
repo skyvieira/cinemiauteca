@@ -1,11 +1,10 @@
 import React from "react";
 import { DiscussionEmbed } from "disqus-react";
-import "./styles.scss";
 
-export default function Comments() {
+export default function Comments({ id }) {
     const disqusConfig = {
         shortname: "cinemiauteca-1",
-        config: { identifier: window.location.pathname }
+        config: { identifier: `${id}`, title: `Discussion` }
     };
 
     return (
