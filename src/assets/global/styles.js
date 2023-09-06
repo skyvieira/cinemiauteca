@@ -10,4 +10,8 @@ export default createGlobalStyle`
     html {
         scroll-behavior: smooth;
     }
+
+    body {
+        background-color: #1a1d29;
+    }
 `;
