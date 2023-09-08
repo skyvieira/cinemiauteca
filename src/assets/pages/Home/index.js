@@ -1,12 +1,14 @@
 import React, { lazy, Suspense } from "react";
 
+//Styles
 import * as S from "./styles";
 
+//Components
 const Layout = lazy(() => import("../../../components/Layout"));
 const MoviesAndShows = lazy(() => import("../../../components/Movie and Show"));
 const Genres = lazy(() => import("../../../components/Movie and Show/genres"));
 
-export default function index() {
+export default function Home() {
     return (
         <>
             <Suspense fallback={<div>Loading...</div>}>
