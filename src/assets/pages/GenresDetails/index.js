@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
+
+//React Router
 import { useParams, Link } from 'react-router-dom';
+
+//Components
 import Layout from '../../../components/Layout';
 
 export default function GenreDetails() {

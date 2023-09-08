@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+//React Router
 import { Link } from 'react-router-dom';
+
+//Styles
 import * as S from './styles';
 
 export default function Genres() {

@@ -4,7 +4,7 @@ import React, { lazy, Suspense } from "react";
 const Movie = lazy(() => import("../../../components/Movie and Show"));
 const Layout = lazy(() => import("../../../components/Layout"));
 
-export default function index() {
+export default function Movies() {
     return (
         <>
             <Layout>
