@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import Comments from '../../Comments';
 import Page from '../index';
@@ -190,7 +190,7 @@ const GoBack = styled.section`
             transform: scale(1.1);
             border: 0.1rem solid #fff;
             background: url('https://i.pinimg.com/originals/36/d1/40/36d1403defc5f8b92b13e194985341f2.gif') no-repeat center/cover;
-            -webkit-background-clip: text, border-box;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     }

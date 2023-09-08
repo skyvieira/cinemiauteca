@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 
+//React Router
 import { Link } from "react-router-dom";
 
+//Assets
 import Cat from "../../assets/gif/cat.gif";
 
+//Styles
 import * as S from "./styles";
 
+//Components
 import Menu from "../Menu";
 
 export default function NavBar() {

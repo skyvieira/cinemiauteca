@@ -1,7 +1,9 @@
 import React from 'react';
 
+//Styles
 import * as S from './styles';
 
+//React Router
 import { Link } from 'react-router-dom';
 
 

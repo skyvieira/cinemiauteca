@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+
+//Components
 import Carousel from "../Carousel";
+
+//React Router
 import { Link, useParams } from "react-router-dom";
 
 export default function Index({ typeOfComponent, apiType }) {

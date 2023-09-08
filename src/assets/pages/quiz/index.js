@@ -3,7 +3,7 @@ import React, { lazy, Suspense } from "react";
 //Components
 const Layout = lazy(() => import("../../../components/Layout"));
 
-export default function index() {
+export default function Quiz() {
     return (
         <>
             <Suspense fallback={<div>Loading...</div>}>
