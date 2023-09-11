@@ -6,13 +6,13 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //Pages
 import Home from '../../pages/home';
 import ErrorPage from './error';
-import Movies from '../../pages/movies';
+import Movies from '../../pages/Movies';
 import Shows from '../../pages/shows';
 import DetailsMovie from '../../pages/movies/detailsMovie';
 import DetailsShow from '../../pages/shows/detailsShow';
 import Quiz from '../../pages/quiz';
 import Search from '../../pages/search';
-import Genres from '../../pages/GenresDetails';
+import Genres from '../../pages/genresDetails';
 import GenreDetails from '../../../components/Movie and Show/genres';
 
 export default function Index() {
