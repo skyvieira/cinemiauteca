@@ -12,7 +12,7 @@ import DetailsMovie from '../../pages/movies/detailsMovie';
 import DetailsShow from '../../pages/shows/detailsShow';
 import Quiz from '../../pages/quiz';
 import Search from '../../pages/search';
-import Genres from '../../pages/GenresDetails';
+import Genres from '../../pages/genresDetails';
 import GenreDetails from '../../../components/Movie and Show/genres';
 
 export default function Index() {

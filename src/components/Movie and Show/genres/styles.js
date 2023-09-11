@@ -20,7 +20,6 @@ export const Card = styled.section`
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
-    margin: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
