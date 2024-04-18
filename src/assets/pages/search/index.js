@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 
 //Components
-const Layout = lazy(() => import("../../../components/Layout"));
+const Layout = lazy(() => import("../../components/Layout"));
 
 export default function Search() {
     return (
