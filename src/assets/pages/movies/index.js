@@ -1,17 +1,16 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 
 //Components
-const Movie = lazy(() => import("../../../components/Movie and Show"));
-const Layout = lazy(() => import("../../../components/Layout"));
+import Movie from "../../components/Movie and Show";
+import Layout from "../../components/Layout";
 
 export default function Movies() {
-    return (
-        <>
-            <Layout>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Movie typeOfComponent={"movies"} apiType={"movie/popular"} />
-                </Suspense>
-            </Layout>
-        </>
-    )
+  return (
+    <>
+      <Layout>
+        <Movie typeOfComponent={"movies"} apiType={"movie/popular"} />
+        <Movie typeOfComponent={"movies"} apiType={"movie/top_rated"} />
+      </Layout>
+    </>
+  );
 }
