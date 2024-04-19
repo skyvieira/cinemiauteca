@@ -28,4 +28,22 @@ export const Logo = styled.section`
     width: 4rem;
     height: 4rem;
   }
+
+  @media only screen and (width <= 375px) {
+    width: 100%;
+    padding-left: 1rem;
+
+    a {
+      gap: 0.5rem;
+    }
+
+    h1 {
+      font: 700 1.5rem/2rem "Macondo Swash Caps", cursive;
+    }
+
+    img {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
 `;

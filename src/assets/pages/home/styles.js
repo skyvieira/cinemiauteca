@@ -8,5 +8,11 @@ export const Main = styled.main`
   .slick-slider {
     height: auto;
     padding: .5rem 0;
+
+    .slick-arrow {
+      @media only screen and (width <= 500px) {
+        top: 25% !important;
+      }
+    }
   }
 `;
