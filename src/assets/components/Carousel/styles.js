@@ -99,7 +99,7 @@ export const CarouselContainer = styled.section`
 
     @media only screen and (width <= 500px) {
       width: 80%;
-      top: 6rem;
+      top: 7rem;
       margin-left: 3rem;
       font-size: 1.35rem;
     }
