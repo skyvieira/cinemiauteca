@@ -5,6 +5,11 @@ export const Footer = styled.footer`
   height: 30vh;
   background-color: #221833;
   margin-top: 5rem;
+
+  @media only screen and (width <= 650px) {
+    height: auto;
+    padding: 2rem 0;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -13,6 +18,11 @@ export const Wrapper = styled.div`
   align-items: center;
   height: 100%;
   padding: 0 3rem;
+
+  @media only screen and (width <= 650px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;
 
 export const AppInfo = styled.div`
@@ -50,10 +60,15 @@ export const SocialMedia = styled.div`
     color: #f9f9f9;
     font: 700 1.5rem "B612", sans-serif;
   }
+
+  @media only screen and (width <= 650px) {
+    width: 100%;
+    align-items: flex-start;
+  }
 `;
 
 export const Links = styled.div`
-  width: 21%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,7 +78,7 @@ export const Links = styled.div`
 export const Profile = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 1rem;
 
@@ -92,5 +107,9 @@ export const Profile = styled.div`
         transform: scale(1.2);
       }
     }
+  }
+
+  @media only screen and (width <= 650px) {
+    justify-content: flex-start;
   }
 `;

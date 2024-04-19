@@ -129,7 +129,7 @@ const Index = ({ type, apiType }) => {
           {type === "movies" ? "Filmes" : "Séries"} similares
         </S.SimilarTitle>
         <section>
-          <Carousel top="45%">
+          <Carousel top="25%">
             {similars.map((similar) => (
               <Link
                 to={`/${type}/details${type}/${similar.id}`}
