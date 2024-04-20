@@ -74,7 +74,7 @@ export const CarouselContainer = styled.section`
 
     @media only screen and (width <= 500px) {
       width: 97vw;
-      height: 40vh;
+      height: 33vh;
     }
   }
 
@@ -90,6 +90,7 @@ export const CarouselContainer = styled.section`
       no-repeat center/cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 .5rem #000);
 
     @media only screen and (width <= 768px) {
       top: 10rem;
@@ -98,7 +99,7 @@ export const CarouselContainer = styled.section`
 
     @media only screen and (width <= 500px) {
       width: 80%;
-      top: 10rem;
+      top: 7rem;
       margin-left: 3rem;
       font-size: 1.35rem;
     }

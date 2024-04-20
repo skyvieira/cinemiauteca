@@ -42,19 +42,13 @@ export default function Slider({ children, top }) {
         settings: {
           centerPadding: "25px",
         },
-      }, 
-      {
-        breakpoint: 550,  
-        settings: {
-          centerPadding: "20px",
-        },
       },
       {
-        breakpoint: 450,
+        breakpoint: 550,
         settings: {
-          centerPadding: "0",
+          centerPadding: "1px",
         },
-      }
+      },
     ],
   };
 

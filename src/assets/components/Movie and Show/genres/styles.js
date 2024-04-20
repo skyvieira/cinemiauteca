@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   width: 100%;
-  height: 100vh;
+  height: auto;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
