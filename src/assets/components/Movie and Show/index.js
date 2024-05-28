@@ -7,6 +7,9 @@ import Link from "../Link";
 //React Router
 import { useParams } from "react-router-dom";
 
+//Styles
+import * as S from "./styles";
+
 export default function Index({ typeOfComponent, apiType }) {
   const { id } = useParams();
   const [items, setItems] = useState([]);
@@ -25,22 +28,26 @@ export default function Index({ typeOfComponent, apiType }) {
       .catch((err) => console.log(err.message));
   }, [id, apiType]);
 
+  document.onload = window.scrollTo(0, 0);
+
   return (
-    <Carousel top="40%">
-      {items.map((item, i) => (
-        <figure key={i}>
-          <Link
-            to={`/${typeOfComponent}/details${typeOfComponent}/${item.id}`}
-          >
-            <img
-              src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
-              alt={item.title || item.name}
-              className="carousel_image"
-            />
-            <figcaption>{item.title || item.name}</figcaption>
-          </Link>
-        </figure>
-      ))}
-    </Carousel>
+    <S.CarrouselWrapper>
+      <Carousel top="40%">
+        {items.map((item, i) => (
+          <S.Poster key={i}>
+            <Link
+              to={`/${typeOfComponent}/details${typeOfComponent}/${item.id}`}
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
+                alt={item.title || item.name}
+                className="carousel_image"
+              />
+              <figcaption>{item.title || item.name}</figcaption>
+            </Link>
+          </S.Poster>
+        ))}
+      </Carousel>
+    </S.CarrouselWrapper>
   );
 }

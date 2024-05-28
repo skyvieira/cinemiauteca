@@ -9,7 +9,7 @@ export const Container = styled.section`
   place-items: center;
   row-gap: 2rem;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (width <= 768px) {
     grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
   }
 `;
@@ -31,7 +31,7 @@ export const Card = styled.figure`
       transform: scale(1.1);
     }
 
-    @media (max-width: 768px) {
+    @media only screen and (width <= 768px) {
       width: 20rem;
       height: 30rem;
     }

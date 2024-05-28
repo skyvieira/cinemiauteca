@@ -52,6 +52,14 @@ export default function Slider({ children, top }) {
     ],
   };
 
+  document.onkeydown = (e) => {
+    if (e.key === "ArrowLeft") {
+      document.querySelector(".slick-prev").click();
+    } else if (e.key === "ArrowRight") {
+      document.querySelector(".slick-next").click();
+    }
+  };
+
   return (
     <S.CarouselContainer>
       <Carousel {...settings}>{children}</Carousel>

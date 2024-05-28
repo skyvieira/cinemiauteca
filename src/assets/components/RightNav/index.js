@@ -25,10 +25,6 @@ const RightNav = ({ open }) => {
                 <Link to="/shows">Shows</Link>
             </S.Item>
             <S.Item>
-                <i class="fa-solid fa-question"></i>
-                <Link to="/quiz">Quiz</Link>
-            </S.Item>
-            <S.Item>
                 <i class="fa-solid fa-search"></i>
                 <Link to="/search">Search</Link>
             </S.Item>
