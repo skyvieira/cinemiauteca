@@ -13,6 +13,7 @@ export default function GenreDetails() {
   const { genreId } = useParams();
   const [genreMovie, setGenreMovie] = useState([]);
   const [genreShow, setGenreShow] = useState([]);
+  const [genreName, setGenreName] = useState("");
 
   useEffect(() => {
     fetch(
@@ -29,7 +30,17 @@ export default function GenreDetails() {
       .then((data) => {
         setGenreShow(data.results);
       });
+    fetch(
+      `https://api.themoviedb.org/3/genre/list?api_key=c6b4b6bad364be3d0debd4a472f74bc4&language=pt-br`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const genre = data.genres.find((genre) => genre.id === Number(genreId));
+        setGenreName(genre.name);
+      });
   }, [genreId]);
+
+  document.title = `Filmes e séries de ${genreName}`;
 
   return (
     <>
