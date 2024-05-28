@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+//gif
+import noise from "../../../gif/noise.gif";
+
 export const Container = styled.section`
   width: 100%;
   height: auto;
@@ -28,28 +31,36 @@ export const Card = styled.section`
   text-align: center;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   background-color: #7174bb;
-  opacity: 0.8;
-  background-image: url(${(props) => props.background});
-  background-size: contain;
-  background-position: calc(100% + 5rem);
-  background-repeat: no-repeat;
-  transition: all 0.2s ease-in-out;
+  position: relative;
+  transition: all 0.5s linear;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    background: url(${noise}) no-repeat center/cover;
+    background-color: #7174bb;
+    background-blend-mode: overlay;
+    opacity: 0.15;
+  }
 
   &:hover {
     transform: scale(1.05);
-    opacity: 1;
 
     h2 {
       background: url("https://i.makeagif.com/media/6-26-2022/Kcv935.gif")
         no-repeat center/cover;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
       text-shadow: none;
     }
   }
 `;
 
 export const Title = styled.h2`
+  width: 100%;
   font: 700 2rem "Macondo Swash Caps", sans-serif;
   color: #ccc;
   text-shadow: 0 0 0.5rem #000;

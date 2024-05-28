@@ -6,9 +6,6 @@ import Link from "../../Link";
 //Styles
 import * as S from "./styles";
 
-//Images
-import Cat from "../../../img/cat.svg";
-
 export default function Genres() {
   const [genres, setGenres] = useState([]);
 
@@ -28,7 +25,7 @@ export default function Genres() {
       <S.Container>
         {genres.map((genre, i) => (
           <Link key={i} to={`/genres/${genre.id}`}>
-            <S.Card background={Cat}>
+            <S.Card>
               <S.Title>{genre.name}</S.Title>
             </S.Card>
           </Link>
