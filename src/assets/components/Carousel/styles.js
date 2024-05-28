@@ -88,8 +88,8 @@ export const CarouselContainer = styled.section`
     text-wrap: balance;
     background: url("https://i.pinimg.com/originals/36/d1/40/36d1403defc5f8b92b13e194985341f2.gif")
       no-repeat center/cover;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     filter: drop-shadow(0 0 .5rem #000);
 
     @media only screen and (width <= 768px) {
@@ -146,8 +146,8 @@ export const LeftArrow = styled.button`
     font-size: 6rem !important;
     background: url("https://i.makeagif.com/media/6-26-2022/Kcv935.gif")
       no-repeat center/cover !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
   }
 
   &:hover,

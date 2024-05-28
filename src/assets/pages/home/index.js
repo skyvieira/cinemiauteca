@@ -9,6 +9,9 @@ const MoviesAndShows = lazy(() => import("../../components/Movie and Show"));
 const Genres = lazy(() => import("../../components/Movie and Show/genres"));
 
 export default function Home() {
+
+  document.title = "Cinemiauteca | Home";
+
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>

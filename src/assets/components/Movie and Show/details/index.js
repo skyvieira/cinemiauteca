@@ -84,10 +84,15 @@ const Index = ({ type, apiType }) => {
     return `${day}/${month}/${year}`;
   };
 
-  function topAndBack() {
-    window.scrollTo(0, 0);
+  function top() {
     window.history.back();
   }
+
+  document.title = `${type === "movies" ? item.title : item.name} - ${
+    type === "movies" ? "Filme" : "Série"
+  }`;
+
+  document.onload = window.scrollTo(0, 0);
 
   const DetailsComponent = ({ item }) => (
     <>
@@ -97,14 +102,16 @@ const Index = ({ type, apiType }) => {
             <h1>{type === "movies" ? item.title : item.name}</h1>
           </S.TitleBox>
           <S.Info>
-            <S.Poster onClick={() => topAndBack()}>
+            <S.PosterWrapper onClick={() => top()}>
               {item.image && (
-                <img
-                  src={item.image}
-                  alt={type === "movies" ? item.title : item.name}
-                />
+                <S.Poster>
+                  <img
+                    src={item.image}
+                    alt={type === "movies" ? item.title : item.name}
+                  />
+                </S.Poster>
               )}
-            </S.Poster>
+            </S.PosterWrapper>
             <S.Details>
               <S.Sinopse>{item.sinopse && <p>{item.sinopse}</p>}</S.Sinopse>
               <S.DetailsInfo>
@@ -118,32 +125,34 @@ const Index = ({ type, apiType }) => {
                 <S.Genre>{item.genre && <p>Gênero: {item.genre}</p>}</S.Genre>
               </S.DetailsInfo>
               <S.GoBack>
-                <button onClick={() => topAndBack()}>Voltar</button>
+                <button onClick={() => top()}>Voltar</button>
               </S.GoBack>
             </S.Details>
           </S.Info>
         </S.Content>
       </S.Container>
       <section>
-        <S.SimilarTitle>
-          {type === "movies" ? "Filmes" : "Séries"} similares
-        </S.SimilarTitle>
         <section>
-          <Carousel top="25%">
+          <Carousel top="50%">
             {similars.map((similar) => (
-              <Link
-                to={`/${type}/details${type}/${similar.id}`}
-                key={similar.id}
-              >
-                <figure>
-                  <img
-                    src={`https://image.tmdb.org/t/p/original${similar.backdrop_path}`}
-                    alt={similar.title || similar.name}
-                    className="carousel_image"
-                  />
-                  <figcaption>{similar.title || similar.name}</figcaption>
-                </figure>
-              </Link>
+              <section>
+                <S.SimilarTitle>
+                  {type === "movies" ? "Filmes" : "Séries"} similares
+                </S.SimilarTitle>
+                <Link
+                  to={`/${type}/details${type}/${similar.id}`}
+                  key={similar.id}
+                >
+                  <figure>
+                    <img
+                      src={`https://image.tmdb.org/t/p/original${similar.backdrop_path}`}
+                      alt={similar.title || similar.name}
+                      className="carousel_image"
+                    />
+                    <figcaption>{similar.title || similar.name}</figcaption>
+                  </figure>
+                </Link>
+              </section>
             ))}
           </Carousel>
         </section>

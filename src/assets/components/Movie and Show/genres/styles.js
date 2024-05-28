@@ -3,10 +3,11 @@ import styled from "styled-components";
 export const Container = styled.section`
   width: 100%;
   height: auto;
-  padding: 0 2rem;
+  padding: 2rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
   place-items: center;
+  padding: 1rem;
   row-gap: 2rem;
 
   a {
