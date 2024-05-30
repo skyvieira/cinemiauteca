@@ -8,7 +8,7 @@ import * as S from "./styles";
 
 export default function Comments({ id }) {
     const disqusConfig = {
-        shortname: "cinemiauteca-1",
+        shortname: "cinemiauteca-2",
         config: { identifier: `${id}`, title: `Discussion`, language: "pt_BR", showMedia: true}
     };
 
