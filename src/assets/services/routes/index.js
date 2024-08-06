@@ -10,7 +10,6 @@ import Movies from "../../pages/movies";
 import Shows from "../../pages/shows";
 import DetailsMovie from "../../pages/movies/detailsMovie";
 import DetailsShow from "../../pages/shows/detailsShow";
-import Search from "../../pages/search";
 import Genres from "../../pages/genres";
 
 //Components
@@ -31,7 +30,6 @@ export default function Index() {
         <Route path="/shows" element={<Shows />} />
         <Route path="/movies/detailsmovies/:id" element={<DetailsMovie />} />
         <Route path="/shows/detailsshows/:id" element={<DetailsShow />} />
-        <Route path="/search" element={<Search />} />
         <Route path="/genres" element={<Genres />}>
           <Route path=":genreId" element={<GenresCard />} />
         </Route>

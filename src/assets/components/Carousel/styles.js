@@ -3,8 +3,11 @@ import styled from "styled-components";
 export const CarouselContainer = styled.section`
   width: 100%;
   height: 100%;
+  padding: 1rem 2rem;
 
-  .slick-slider {
+  .swiper {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,6 +17,7 @@ export const CarouselContainer = styled.section`
     a {
       width: 100%;
       height: 100%;
+      cursor: grab;
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -25,11 +29,7 @@ export const CarouselContainer = styled.section`
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.8) 20%,
-          rgba(0, 0, 0, 0) 100%
-        );
+        background: rgba(0, 0, 0, 0.3);
         z-index: 1;
         transition: all 0.3s ease-in-out;
       }
@@ -38,96 +38,26 @@ export const CarouselContainer = styled.section`
     a:hover .carousel_image {
       transform: scale(1.1);
     }
-
-    .slick-dots {
-      bottom: 1rem;
-      right: 5rem;
-      text-align: right;
-
-      li {
-        button:before {
-          color: #f9f9f9;
-        }
-      }
-
-      @media only screen and (width <= 768px) {
-        display: none !important;
-      }
+  
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #fff !important;
     }
+  }
 
-    @media only screen and (width <= 768px) {
-      align-items: center;
-    }
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .carousel_image {
-    width: 90vw;
-    height: 58vh;
+    width: 100%;
+    height: 50vh;
     object-fit: cover;
-    object-position: top;
+    object-position: bottom;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-in-out;
-
-    @media only screen and (width <= 768px) {
-      height: 50vh;
-    }
-
-    @media only screen and (width <= 500px) {
-      width: 97vw;
-      height: 33vh;
-    }
-  }
-
-  figcaption {
-    width: 90%;
-    position: absolute;
-    top: 15rem;
-    margin-left: 2rem;
-    z-index: 2;
-    font: 700 3rem "B612", serif;
-    text-wrap: balance;
-    background: url("https://i.pinimg.com/originals/36/d1/40/36d1403defc5f8b92b13e194985341f2.gif")
-      no-repeat center/cover;
-    background-clip: text;
-    color: transparent;
-    filter: drop-shadow(0 0 .5rem #000);
-
-    @media only screen and (width <= 768px) {
-      top: 10rem;
-      font-size: 2rem;
-    }
-
-    @media only screen and (width <= 500px) {
-      width: 80%;
-      top: 7rem;
-      margin-left: 3rem;
-      font-size: 1.35rem;
-    }
-  }
-
-  .slick-prev {
-    left: 1rem !important;
-
-    &:before {
-      content: "‹";
-    }
-  }
-
-  .slick-next {
-    &:before {
-      content: "›";
-    }
-  }
-
-  .slick-initialized .slick-slide {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-
-  .slick-track {
-    display: flex;
-    align-items: center;
   }
 `;
 
