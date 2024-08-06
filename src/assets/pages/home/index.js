@@ -16,14 +16,20 @@ export default function Home() {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <Layout>
-          <S.Main>
+          <S.HomeWrapper>
             <Suspense fallback={<div>Loading...</div>}>
+            <S.Type>
+              Popular movies
+            </S.Type>
               <MoviesAndShows
                 typeOfComponent={"movies"}
                 apiType={"movie/popular"}
               />
             </Suspense>
             <Suspense fallback={<div>Loading...</div>}>
+            <S.Type>
+              Top Rated Shows
+            </S.Type>
               <MoviesAndShows
                 typeOfComponent={"shows"}
                 apiType={"tv/top_rated"}
@@ -32,7 +38,7 @@ export default function Home() {
             <Suspense fallback={<div>Loading...</div>}>
               <Genres />
             </Suspense>
-          </S.Main>
+          </S.HomeWrapper>
         </Layout>
       </Suspense>
     </>

@@ -9,8 +9,12 @@ export const Container = styled.section`
   place-items: center;
   row-gap: 2rem;
 
-  @media only screen and (width <= 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+  @media only screen and (width <= 815px) {
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  }
+
+  @media only screen and (width <= 425px) {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
   }
 `;
 
@@ -32,8 +36,13 @@ export const Card = styled.figure`
     }
 
     @media only screen and (width <= 768px) {
-      width: 20rem;
-      height: 30rem;
+      width: 11rem;
+      height: 16.5rem;
+    }
+
+    @media only screen and (width <= 768px) {
+      width: 9.5rem;
+      height: 15rem;
     }
   }
 `;

@@ -8,7 +8,7 @@ import Layout from "../../components/Layout";
 import * as S from "./style";
 
 export default function Movies() {
-  document.title = "Cinemiauteca | Filmes";
+  document.title = "Cinemiauteca | Movies";
 
   return (
     <>
