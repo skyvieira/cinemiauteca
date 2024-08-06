@@ -53,7 +53,7 @@ export const TitleBox = styled.section`
   align-items: flex-end;
   font: 700 4rem "B612", sans-serif;
   color: #f9f9f9;
-  padding: 1rem 0;
+  padding: 1rem;
   text-align: center;
 
   @media only screen and (width <= 1024px) {

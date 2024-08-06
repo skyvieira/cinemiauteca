@@ -22,14 +22,14 @@ const Index = ({ type, apiType }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/${apiType}/${id}?api_key=${API_KEY}&language=pt-br`
+          `https://api.themoviedb.org/3/${apiType}/${id}?api_key=${API_KEY}`
         );
         const data = await response.json();
         const newItem = {
           id,
-          title: data.title || "Título não encontrado",
-          name: data.name || "Título não encontrado",
-          sinopse: data.overview || "Sinopse não encontrada",
+          title: data.title || "Title not found",
+          name: data.name || "Title not found",
+          sinopse: data.overview || "Overview not found",
           image: data.poster_path
             ? `https://image.tmdb.org/t/p/original${data.poster_path}`
             : `https://image.tmdb.org/t/p/original${data.backdrop_path}`,
@@ -39,10 +39,11 @@ const Index = ({ type, apiType }) => {
           releaseDate:
             data.release_date ||
             data.first_air_date ||
-            "Data de lançamento não encontrada",
+            "Release date not found",
           genre: getGenre(data),
         };
         setItem(newItem);
+        console.log(newItem);
       } catch (error) {
         console.log(error);
       }
@@ -55,7 +56,7 @@ const Index = ({ type, apiType }) => {
     const fetchSimilarData = async () => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/${apiType}/${id}/similar?api_key=${API_KEY}&language=pt-br`
+          `https://api.themoviedb.org/3/${apiType}/${id}/similar?api_key=${API_KEY}`
         );
         const data = await response.json();
         const similarItems = data.results.filter((item) => item.backdrop_path);
@@ -88,15 +89,15 @@ const Index = ({ type, apiType }) => {
     window.history.back();
   }
 
-  document.title = `${type === "movies" ? item.title : item.name} - ${
-    type === "movies" ? "Filme" : "Série"
+  document.title = `${type === "movies" ? item.title : item.name} | ${
+    type === "movies" ? "Movie" : "Show"
   }`;
 
   document.onload = window.scrollTo(0, 0);
 
   const DetailsComponent = ({ item }) => (
     <>
-      <S.Container background={item.backdrop}>
+      <S.Container background={item.image}>
         <S.Content>
           <S.TitleBox>
             <h1>{type === "movies" ? item.title : item.name}</h1>
@@ -117,15 +118,13 @@ const Index = ({ type, apiType }) => {
               <S.DetailsInfo>
                 <S.ReleaseDate>
                   {item.releaseDate && (
-                    <p>
-                      Data de lançamento: {formatReleaseDate(item.releaseDate)}
-                    </p>
+                    <p>Release Date: {formatReleaseDate(item.releaseDate)}</p>
                   )}
                 </S.ReleaseDate>
-                <S.Genre>{item.genre && <p>Gênero: {item.genre}</p>}</S.Genre>
+                <S.Genre>{item.genre && <p>Genre: {item.genre}</p>}</S.Genre>
               </S.DetailsInfo>
               <S.GoBack>
-                <button onClick={() => top()}>Voltar</button>
+                <button onClick={() => top()}>Go Back</button>
               </S.GoBack>
             </S.Details>
           </S.Info>
@@ -134,11 +133,11 @@ const Index = ({ type, apiType }) => {
       <section>
         <section>
           <Carousel top="50%">
+            <S.SimilarTitle>
+              {type === "movies" ? "Similar Movies" : "Similar Shows"}
+            </S.SimilarTitle>
             {similars.map((similar) => (
               <section>
-                <S.SimilarTitle>
-                  {type === "movies" ? "Filmes" : "Séries"} similares
-                </S.SimilarTitle>
                 <Link
                   to={`/${type}/details${type}/${similar.id}`}
                   key={similar.id}
@@ -149,7 +148,6 @@ const Index = ({ type, apiType }) => {
                       alt={similar.title || similar.name}
                       className="carousel_image"
                     />
-                    <figcaption>{similar.title || similar.name}</figcaption>
                   </figure>
                 </Link>
               </section>

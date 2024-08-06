@@ -17,21 +17,21 @@ export default function GenreDetails() {
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=c6b4b6bad364be3d0debd4a472f74bc4&with_genres=${genreId}&language=pt-br`
+      `https://api.themoviedb.org/3/discover/movie?api_key=c6b4b6bad364be3d0debd4a472f74bc4&with_genres=${genreId}`
     )
       .then((response) => response.json())
       .then((data) => {
         setGenreMovie(data.results);
       });
     fetch(
-      `https://api.themoviedb.org/3/discover/tv?api_key=c6b4b6bad364be3d0debd4a472f74bc4&with_genres=${genreId}&language=pt-br`
+      `https://api.themoviedb.org/3/discover/tv?api_key=c6b4b6bad364be3d0debd4a472f74bc4&with_genres=${genreId}`
     )
       .then((response) => response.json())
       .then((data) => {
         setGenreShow(data.results);
       });
     fetch(
-      `https://api.themoviedb.org/3/genre/list?api_key=c6b4b6bad364be3d0debd4a472f74bc4&language=pt-br`
+      `https://api.themoviedb.org/3/genre/list?api_key=c6b4b6bad364be3d0debd4a472f74bc4`
     )
       .then((response) => response.json())
       .then((data) => {

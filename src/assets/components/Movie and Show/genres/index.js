@@ -11,7 +11,7 @@ export default function Genres() {
 
   useEffect(() => {
     fetch(
-      `https://api.themoviedb.org/3/genre/list?api_key=c6b4b6bad364be3d0debd4a472f74bc4&language=pt-br`
+      `https://api.themoviedb.org/3/genre/list?api_key=c6b4b6bad364be3d0debd4a472f74bc4`
     )
       .then((response) => response.json())
       .then((data) => {

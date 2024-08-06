@@ -12,19 +12,15 @@ export default function index() {
       <S.List>
         <S.Item>
           <i class="fa-solid fa-house"></i>
-          <Link to="/">Início</Link>
+          <Link to="/">Home</Link>
         </S.Item>
         <S.Item>
           <i class="fa-solid fa-clapperboard"></i>
-          <Link to="/movies">Filmes</Link>
+          <Link to="/movies">Movies</Link>
         </S.Item>
         <S.Item>
           <i class="fa-solid fa-tv"></i>
-          <Link to="/shows">Séries</Link>
-        </S.Item>
-        <S.Item>
-          <i class="fa-solid fa-search"></i>
-          <Link to="/search">Pesquisar</Link>
+          <Link to="/shows">Shows</Link>
         </S.Item>
       </S.List>
     </>

@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Footer = styled.footer`
   width: 100%;
   height: 30vh;
-  background-color: #221833;
   margin-top: 5rem;
 
   @media only screen and (width <= 650px) {
