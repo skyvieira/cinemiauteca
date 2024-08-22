@@ -1,6 +1,6 @@
 # Cinemiauteca 🎬🍿
 
-> Status : Unfinished project 🕰️ / Open PR
+> Status : Finished project ✅ / Open PR
 
 ## Personal project with pair programming
 

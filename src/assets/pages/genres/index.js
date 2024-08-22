@@ -52,6 +52,7 @@ export default function GenreDetails() {
                 <img
                   src={`https://image.tmdb.org/t/p/original${content.poster_path}`}
                   alt={content.title}
+                  loading="lazy"
                 />
               </Link>
             </S.Card>
@@ -62,6 +63,7 @@ export default function GenreDetails() {
                 <img
                   src={`https://image.tmdb.org/t/p/original${content.poster_path}`}
                   alt={content.name}
+                  loading="lazy"
                 />
               </Link>
             </S.Card>
