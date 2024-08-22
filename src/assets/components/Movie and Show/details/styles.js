@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background: url(${(props) => props.background}) no-repeat center/cover;
   background-attachment: fixed;
   display: flex;
@@ -47,7 +47,6 @@ export const Content = styled.section`
 export const TitleBox = styled.section`
   width: 100%;
   height: auto;
-  text-wrap: balance;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -287,4 +286,20 @@ export const SimilarTitle = styled.h1`
   font: 700 2rem "B612", sans-serif;
   color: #f9f9f9;
   padding: 1rem 0;
+`;
+
+export const SimilarsName = styled.h2`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-wrap: balance;
+  align-items: flex-end;
+  justify-content: center;
+  font: 700 2rem "B612", sans-serif;
+  text-align: center;
+  color: #f9f9f9;
+  filter: drop-shadow(1px 1px 1px #000);
+  padding: 1rem 0;
+  position: absolute;
+  z-index: 1;
 `;

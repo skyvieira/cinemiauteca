@@ -4,12 +4,12 @@ import React, { lazy, Suspense } from "react";
 import * as S from "./styles";
 
 //Components
+import Type from "../../components/type";
 const Layout = lazy(() => import("../../components/Layout"));
 const MoviesAndShows = lazy(() => import("../../components/Movie and Show"));
 const Genres = lazy(() => import("../../components/Movie and Show/genres"));
 
 export default function Home() {
-
   document.title = "Cinemiauteca | Home";
 
   return (
@@ -18,18 +18,14 @@ export default function Home() {
         <Layout>
           <S.HomeWrapper>
             <Suspense fallback={<div>Loading...</div>}>
-            <S.Type>
-              Popular movies
-            </S.Type>
+              <Type text="Popular movies" />
               <MoviesAndShows
                 typeOfComponent={"movies"}
                 apiType={"movie/popular"}
               />
             </Suspense>
             <Suspense fallback={<div>Loading...</div>}>
-            <S.Type>
-              Top Rated Shows
-            </S.Type>
+              <Type text="Top rated shows" />
               <MoviesAndShows
                 typeOfComponent={"shows"}
                 apiType={"tv/top_rated"}

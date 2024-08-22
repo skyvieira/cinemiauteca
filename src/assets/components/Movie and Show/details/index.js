@@ -11,6 +11,9 @@ import Link from "../../Link";
 //Styles
 import * as S from "./styles";
 
+//Swiper
+import { SwiperSlide } from "swiper/react";
+
 const API_KEY = "c6b4b6bad364be3d0debd4a472f74bc4";
 
 const Index = ({ type, apiType }) => {
@@ -132,25 +135,28 @@ const Index = ({ type, apiType }) => {
       </S.Container>
       <section>
         <section>
+          <S.SimilarTitle>
+            {type === "movies" ? "Similar Movies" : "Similar Shows"}
+          </S.SimilarTitle>
           <Carousel top="50%">
-            <S.SimilarTitle>
-              {type === "movies" ? "Similar Movies" : "Similar Shows"}
-            </S.SimilarTitle>
-            {similars.map((similar) => (
-              <section>
-                <Link
-                  to={`/${type}/details${type}/${similar.id}`}
-                  key={similar.id}
-                >
-                  <figure>
+            {similars.map((similar, i) => (
+              <SwiperSlide key={i}>
+                <S.Poster>
+                  <Link
+                    to={`/${type}/details${type}/${similar.id}`}
+                    key={similar.id}
+                  >
+                    <S.SimilarsName>
+                      {similar.title || similar.name}
+                    </S.SimilarsName>
                     <img
                       src={`https://image.tmdb.org/t/p/original${similar.backdrop_path}`}
                       alt={similar.title || similar.name}
                       className="carousel_image"
                     />
-                  </figure>
-                </Link>
-              </section>
+                  </Link>
+                </S.Poster>
+              </SwiperSlide>
             ))}
           </Carousel>
         </section>

@@ -45,6 +45,7 @@ export default function Index({ typeOfComponent, apiType }) {
                 <img
                   src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
                   alt={item.title || item.name}
+                  loading="lazy"
                   className="carousel_image"
                 />
               </Link>

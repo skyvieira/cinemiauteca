@@ -43,7 +43,7 @@ export default function NavBar() {
                 <S.Nav>
                     <Logo />
                     <Menu />
-                    < List />
+                    <List />
                 </S.Nav>
             </S.Container>
         </>

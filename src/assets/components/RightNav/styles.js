@@ -12,29 +12,29 @@ export const List = styled.ul`
     flex-flow: column nowrap;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, .8) 0%,
-      rgba(0, 0, 0, .8) 100%
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.8) 100%
     );
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
     right: 0;
-    min-height: 100vh;
+    min-height: 100dvh;
     width: 18.75rem;
     padding-top: 3.5rem;
     font: 400 1.25rem/2rem "B612", sans-serif;
-    transition: transform .3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 
     a {
-      padding-top: .3rem;
+      padding-top: 0.3rem;
       color: transparent;
       font: 400 1.2rem/2rem "B612", sans-serif;
-      transition: all .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
 
       &::after {
         content: "";
         display: block;
-        border-bottom: .1rem solid #b2aeee;
+        border-bottom: 0.1rem solid #b2aeee;
         transform: scaleX(0);
         transition: transform 250ms ease-in-out;
       }
@@ -51,12 +51,12 @@ export const Item = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .5em;
+  gap: 0.5em;
   background: url("https://i.pinimg.com/originals/36/d1/40/36d1403defc5f8b92b13e194985341f2.gif")
     no-repeat center/cover;
   background-clip: text;
   color: transparent;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   i {
     font-size: 1.1rem;

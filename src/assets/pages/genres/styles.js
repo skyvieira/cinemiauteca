@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   padding-top: 8rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
@@ -40,7 +40,7 @@ export const Card = styled.figure`
       height: 16.5rem;
     }
 
-    @media only screen and (width <= 768px) {
+    @media only screen and (width <= 600px) {
       width: 9.5rem;
       height: 15rem;
     }
