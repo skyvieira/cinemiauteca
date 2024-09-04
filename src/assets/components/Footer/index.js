@@ -39,7 +39,7 @@ export default function Footer() {
             <S.Profile>
               <p>Sky</p>
               <a
-                href="https://github.com/liviavieira"
+                href="https://github.com/skyvieira"
                 target="_blank"
                 rel="noreferrer"
               >
