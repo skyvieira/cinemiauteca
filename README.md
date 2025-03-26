@@ -15,7 +15,7 @@
 
 ### How to use
  
-- git clone https://github.com/sky/cinemiauteca.git or download the zip
+- git clone https://github.com/skyvieira/cinemiauteca.git or download the zip
 - npm install or yarn install
 - code . (if you use VSCode)
 - npm start or yarn start
